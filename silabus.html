@@ -1,0 +1,308 @@
+<title>סרטון אחד שמוכר בשבילך</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Assistant:wght@300;400;600;700&family=Cousine:wght@400&display=swap">
+
+<style>
+:root{
+  --ground:#FBF7F0;--raise:#F3EADC;--ink:#2E2620;--soft:#8A7B6B;
+  --line:#E2D5C1;--gold:#A87C34;--clay:#A0523B;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#211B16;--raise:#2B241D;--ink:#F1E8DA;--soft:#A79683;
+    --line:#3D332A;--gold:#D8AE68;--clay:#D08A6E;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#211B16;--raise:#2B241D;--ink:#F1E8DA;--soft:#A79683;
+  --line:#3D332A;--gold:#D8AE68;--clay:#D08A6E;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--ground);color:var(--ink);
+  font-family:"Assistant",-apple-system,"Segoe UI",sans-serif;
+  font-size:18px;line-height:1.7;direction:rtl;text-align:right;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{
+  max-width:40rem;margin:0 auto;
+  padding:clamp(2.5rem,7vw,5rem) clamp(1.25rem,5vw,2rem) 6rem;
+  display:flex;flex-direction:column;gap:clamp(2.75rem,6vw,4rem);
+}
+p{margin:0}
+h1{
+  font-family:"Secular One",Georgia,sans-serif;font-weight:900;
+  font-size:clamp(2.3rem,8.4vw,3.3rem);line-height:1.08;
+  letter-spacing:-.015em;margin:0;text-wrap:balance;
+}
+.eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.14em;color:var(--soft);margin:0}
+
+header{display:flex;flex-direction:column;gap:1.05rem}
+.lede{font-size:1.16rem;font-weight:300;line-height:1.65;color:var(--soft)}
+.lede strong{color:var(--ink);font-weight:600}
+
+.spec{display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{
+  border:1px solid var(--line);background:var(--raise);
+  padding:.3rem .8rem;font-size:.88rem;font-weight:600;
+  color:var(--ink);font-variant-numeric:tabular-nums;
+}
+
+.half{display:flex;flex-direction:column;gap:1.5rem}
+.halfhead{
+  display:flex;align-items:baseline;justify-content:space-between;
+  gap:1rem;border-top:2px solid var(--gold);padding-top:1rem;flex-wrap:wrap;
+}
+.halfhead .naming{display:flex;flex-direction:column;gap:.1rem}
+.halfhead .kicker{font-size:.75rem;font-weight:700;letter-spacing:.14em;color:var(--gold)}
+.halfhead .title{
+  font-family:"Secular One",Georgia,sans-serif;font-weight:700;
+  font-size:clamp(1.6rem,5.2vw,2rem);line-height:1.15;
+}
+.halfhead .dur{
+  font-family:"Secular One",Georgia,sans-serif;font-weight:500;
+  font-size:1.05rem;color:var(--soft);font-variant-numeric:tabular-nums;white-space:nowrap;
+}
+.halfsub{font-size:1.05rem;color:var(--soft);line-height:1.6;margin-top:-.6rem}
+
+.topics{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+.topic{
+  border-bottom:1px solid var(--line);padding:1.05rem 0;
+  display:grid;grid-template-columns:2.6rem 1fr;gap:0 .85rem;align-items:baseline;
+}
+.topic .m{
+  font-family:"Secular One",Georgia,sans-serif;font-weight:500;
+  font-size:1rem;color:var(--gold);font-variant-numeric:tabular-nums;white-space:nowrap;
+}
+.topic .m small{font-size:.62em;font-weight:400;padding-inline-start:.1rem}
+.topic .t{font-weight:700;font-size:1.08rem;line-height:1.35;color:var(--ink)}
+.topic .d{grid-column:2;font-size:.98rem;color:var(--soft);line-height:1.55;margin-top:.2rem}
+
+.topic.work{background:var(--raise);padding-inline:.85rem;margin-inline:-.85rem;border-inline-start:3px solid var(--gold)}
+.topic.work .d{color:var(--ink)}
+.tag{
+  display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.12em;
+  color:var(--gold);border:1px solid var(--gold);padding:.05rem .4rem;
+  margin-inline-start:.5rem;vertical-align:.18em;
+}
+
+.pause{
+  display:flex;align-items:baseline;gap:.9rem;color:var(--soft);
+  font-size:.98rem;padding:.7rem 0;border-bottom:1px solid var(--line);
+}
+.pause b{font-family:"Secular One",Georgia,sans-serif;font-weight:500;color:var(--gold);font-size:1.05rem}
+
+.outcome{
+  background:var(--raise);border-inline-start:3px solid var(--gold);
+  padding:1rem 1.1rem;display:flex;flex-direction:column;gap:.35rem;
+}
+.outcome .k{font-size:.75rem;font-weight:700;letter-spacing:.12em;color:var(--gold)}
+.outcome p{font-size:1.02rem;color:var(--ink)}
+
+blockquote{
+  margin:0;font-family:"Secular One",Georgia,sans-serif;font-weight:500;
+  font-size:1.18rem;line-height:1.55;color:var(--ink);
+  border-inline-start:2px solid var(--gold);padding-inline-start:1rem;
+}
+
+section{display:flex;flex-direction:column;gap:1.2rem}
+h2{
+  font-family:"Secular One",Georgia,sans-serif;font-weight:700;
+  font-size:clamp(1.4rem,4.6vw,1.7rem);line-height:1.25;margin:0;
+}
+hr.rule{height:1px;background:var(--line);border:0;margin:0}
+
+.namebox{border:1px solid var(--line);padding:1.1rem;display:flex;flex-direction:column;gap:.5rem}
+.namebox .k{font-size:.75rem;font-weight:700;letter-spacing:.12em;color:var(--gold)}
+.namebox p{font-size:.97rem;color:var(--soft);line-height:1.6}
+.namebox p b{color:var(--ink)}
+
+footer{border-top:1px solid var(--line);padding-top:1.3rem;font-size:.9rem;color:var(--soft);line-height:1.7}
+</style>
+
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow">מוצר פרונט · סדנת לייב · 11 באוקטובר 2026</p>
+    <h1>סרטון אחד<br>שמוכר בשבילך</h1>
+    <p class="lede">בשעתיים נבנה יחד את הסרטון שמביא פניות חמות לשירות היקר שלך, <strong>גם אם את קופאת מול המצלמה ומוחקת כל מה שאת מצלמת.</strong></p>
+    <div class="spec">
+      <span class="chip">97 ש״ח</span>
+      <span class="chip">שעתיים</span>
+      <span class="chip">מוקלטת</span>
+      <span class="chip">6 תרגילים</span>
+    </div>
+  </header>
+
+  <section>
+    <blockquote>היא כן מצטלמת. פעם אחת. ואז הסרטון עובד בשבילה שוב ושוב.</blockquote>
+    <p style="color:var(--soft)">החצי הראשון מנטלי: למה היא קופאת, ומה עושים עם זה. החצי השני מעשי: בונות את הסרטון, והיא יוצאת עם תסריט, תוכנית צילום לערב אחד, וגרסת הקראה. ואחרי הסדנה נשאר לה שבוע ליווי בוואטסאפ.</p>
+  </section>
+
+  <hr class="rule">
+
+  <div class="half">
+    <div class="halfhead">
+      <div class="naming">
+        <span class="kicker">חצי ראשון</span>
+        <span class="title">מנטלי</span>
+      </div>
+      <span class="dur">65 דקות</span>
+    </div>
+    <p class="halfsub">מה קורה בשנייה שבה היד על הכפתור והיא לא לוחצת. שלושה תרגילים.</p>
+
+    <div class="topics">
+
+      <div class="topic">
+        <span class="m">8<small>דק׳</small></span>
+        <span class="t">השנייה שלפני ההקלטה</span>
+        <span class="d">התאורה בסדר, מה שהיא רוצה להגיד ברור לה, והיא לא לוחצת. ואז מגיע ההסבר: התאורה, העייפות, הרקע. ומחר יבוא הסבר חדש. ואם זו הייתה בעיה טכנית, מצלמה טובה יותר הייתה פותרת אותה.</span>
+      </div>
+
+      <div class="topic">
+        <span class="m">16<small>דק׳</small></span>
+        <span class="t">מזווה התודעה</span>
+        <span class="d">בכל קונדיטוריה יש מזווה. הקונדיטורית מוצאת קמח עם גושים, שוקולד שפג תוקפו, שמנת שהחמיצה, וזורקת בלי להתלבט. אצלנו הקופסה נשארת על המדף ואנחנו ממחזרות אותה. מה מאוחסן במזווה שלה כבר שנים, ועולה בדיוק כשהיא מדליקה מצלמה.</span>
+      </div>
+
+      <div class="topic">
+        <span class="m">9<small>דק׳</small></span>
+        <span class="t">מי שכבר עברה את זה</span>
+        <span class="d">הלקוחה שבמזווה שלה ישבה מחשבה אחת, "אני לא יודעת לדבר מול אנשים", שאפילו לא הצליחה לומר אותה לעצמה. ומהתניא: על המחשבה הראשונה אין שליטה, על כל מה שאחריה יש שליטה מלאה.</span>
+      </div>
+
+      <div class="topic work">
+        <span class="m">14<small>דק׳</small></span>
+        <span class="t">מה נורא בזה<span class="tag">תרגיל 2</span></span>
+        <span class="d">מה הדבר הנורא שיקרה אם תעלי את הסרטון. ומה נורא בזה. ושוב, שבע פעמים, עד השורש. ואז ניקוי המדף: המחשבה בכתב מילה במילה, נאמרת בקול, ומה נכנס במקומה. כי מדף ריק מתמלא באבק.</span>
+      </div>
+
+      <div class="topic">
+        <span class="m">12<small>דק׳</small></span>
+        <span class="t">זה לא עלייך. זה עליה.</span>
+        <span class="d">כל עוד המצלמה מכוונת אלייך היא תמיד תפחיד, כי אז מדובר בך. וההיפוך: יש שם אישה אחת שמחכה בדיוק למה שיש לך. אין לנו פריבילגיה להשאיר אצלנו את המתנות שקיבלנו.</span>
+      </div>
+
+      <div class="topic work">
+        <span class="m">6<small>דק׳</small></span>
+        <span class="t">עשרים שניות, עכשיו<span class="tag">תרגיל 3</span></span>
+        <span class="d">מקליטה עשרים שניות בשידור. בלי הכנה, בלי מלל מנוסח, ולא לפרסום. רק כדי שהגוף ידע שאפשר. אחרי הפעולות נמשכים הלבבות, ולא הפוך.</span>
+      </div>
+
+    </div>
+
+    <div class="outcome">
+      <span class="k">יוצאת מהחצי הזה עם</span>
+      <p>המחשבה האחת שחוסמת אותה בכתב, המשפט שמחליף אותה, סיבה לצלם שאינה היא עצמה, והקלטה אחת שכבר קיימת.</p>
+    </div>
+  </div>
+
+  <div class="pause"><b>5 דק׳</b><span>הפסקה</span></div>
+
+  <div class="half">
+    <div class="halfhead">
+      <div class="naming">
+        <span class="kicker">חצי שני</span>
+        <span class="title">מעשי</span>
+      </div>
+      <span class="dur">50 דקות</span>
+    </div>
+    <p class="halfsub">בונות את הסרטון בשידור, ויוצאות איתו ביד. שלושה תרגילים.</p>
+
+    <div class="topics">
+
+      <div class="topic">
+        <span class="m">5<small>דק׳</small></span>
+        <span class="t">למי, ומה</span>
+        <span class="d">אישה אחת, במצב אחד, ברגע אחד. ככל שהיא צרה יותר, כך יותר נשים מזדהות. והמסר: לא רשימת יתרונות, אלא האמונה האחת שאם היא תאמין בה, היא תבין לבד שאת הפתרון.</span>
+      </div>
+
+      <div class="topic work">
+        <span class="m">10<small>דק׳</small></span>
+        <span class="t">האישה האחת והמסר<span class="tag">תרגיל 4</span></span>
+        <span class="d">כותבת את האישה האחת במשפט. ואז שלוש גרסאות למסר, ובוחרת אחת. קוראת בקול. אם זה נשמע כמו סיסמה, זה עוד לא נכון. נשען על מחקר הקהל שהן עשו לפני.</span>
+      </div>
+
+      <div class="topic">
+        <span class="m">4<small>דק׳</small></span>
+        <span class="t">דף אחד, סרטון אחד, כפתור אחד</span>
+        <span class="d">היא ממלאת שאלון, עוברת לדף תודה, ומשם לשיחה. אין עוד דפים ואין עוד שלבים.</span>
+      </div>
+
+      <div class="topic">
+        <span class="m">7<small>דק׳</small></span>
+        <span class="t">תבנית התסריט</span>
+        <span class="d">שתים עשרה תחנות: את במקום הנכון · לשמור אותה בסרטון · אוטוריטה · הבעיה וסיבוב הסכין · מה כולן עושות ולמה זה גרוע · לנרמל · תכלס · מה יקרה לך אחרי · עדויות · ההצעה · קריאה לפעולה · בדיקת התאמה.</span>
+      </div>
+
+      <div class="topic">
+        <span class="m">3<small>דק׳</small></span>
+        <span class="t">פעם אחת מול המצלמה</span>
+        <span class="d">היא עומדת מול המצלמה פעם אחת, טלפון על חצובה, ומקליטה את התסריט. מסביב נכנסות תמונות של מה שהיא עושה ממילא: הידיים, הקליניקה בבוקר, הפנקס, הכוס, הדלת.</span>
+      </div>
+
+      <div class="topic work">
+        <span class="m">13<small>דק׳</small></span>
+        <span class="t">מפעילות את שלושת הסוכנים<span class="tag">תרגיל 5</span></span>
+        <span class="d">כותבת התסריט הופכת את התשובות שלה לתסריט לפי התבנית. מפיקת הצילומים הופכת אותו לרשימת צילומים בלי פנים. מכינת ההקראה אומרת איפה לנשום ומה למחוק.</span>
+      </div>
+
+      <div class="topic work">
+        <span class="m">8<small>דק׳</small></span>
+        <span class="t">השורה הראשונה, בקול<span class="tag">תרגיל 6</span></span>
+        <span class="d">לוקחת את השורה הראשונה מהתסריט שלה ומקליטה אותה. שוב, ושוב, עד שאחת יוצאת נכון. ואז בוחרת שלושה צילומים שהיא מצלמת מחר. בתחילת הסדנה היא הקליטה עשרים שניות של כלום רק כדי שהגוף ידע שאפשר. עכשיו היא מקליטה את המשפט האמיתי, וזה כבר לא תרגיל.</span>
+      </div>
+
+    </div>
+
+    <div class="outcome">
+      <span class="k">יוצאת מהסדנה עם</span>
+      <p>תסריט מלא, תוכנית צילום לערב אחד, וגרסת הקראה. שלושה קבצים, ואחריהם שבוע ליווי בוואטסאפ עד שהסרטון באוויר.</p>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <section>
+    <h2>ששת התרגילים</h2>
+    <div class="namebox">
+      <span class="k">מה היא עושה בפועל, ולא רק שומעת</span>
+      <p><b>1. מי העין שלך.</b> מזהה את מי היא באמת מפחדת ולא את הלקוחה.</p>
+      <p><b>2. מה נורא בזה, שבע פעמים.</b> מגיעה לשורש, ומנקה את המדף.</p>
+      <p><b>3. עשרים שניות, עכשיו.</b> מקליטה בשידור. זה הרגע היחיד שבו היא עושה בסדנה בדיוק את הדבר שהיא מפחדת ממנו.</p>
+      <p><b>4. האישה האחת והמסר.</b> למי היא מדברת ומה היא אומרת, בכתב.</p>
+      <p><b>5. מפעילות את שלושת הסוכנים.</b> יוצאת עם התסריט ורשימת הצילומים.</p>
+      <p><b>6. השורה הראשונה, בקול.</b> מקליטה את המשפט הראשון האמיתי שלה, ובוחרת שלושה צילומים למחר. בתחילת הסדנה היא הקליטה עשרים שניות של כלום. עכשיו זה כבר לא תרגיל.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>אחרי הסדנה</h2>
+    <div class="namebox">
+      <span class="k">שבוע ליווי בוואטסאפ</span>
+      <p><b>היא לא נשארת לבד עם התסריט.</b> שבוע שלם שבו היא שולחת את התסריט, שולחת את הצילומים, שואלת מה שצריך, ומקבלת תשובה.</p>
+      <p>זה גם מה שהופך את ההצעה לשלמה: הסדנה נגמרת, הליווי לא, והסרטון באמת יוצא לאוויר.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>ששת התרגילים</h2>
+    <div class="namebox">
+      <span class="k">מה היא עושה בפועל, ולא רק שומעת</span>
+      <p><b>1. מי העין שלך.</b> מזהה את מי היא באמת מפחדת, ולא את הלקוחה.</p>
+      <p><b>2. מה נורא בזה, שבע פעמים.</b> מגיעה לשורש, ומנקה את המדף.</p>
+      <p><b>3. עשרים שניות, עכשיו.</b> מקליטה בשידור. הרגע היחיד שבו היא עושה בסדנה בדיוק את הדבר שהיא מפחדת ממנו.</p>
+      <p><b>4. האישה האחת והמסר.</b> למי היא מדברת ומה היא אומרת, בכתב.</p>
+      <p><b>5. מפעילות את שלושת הסוכנים.</b> יוצאת עם התסריט ותוכנית הצילום.</p>
+      <p><b>6. השורה הראשונה, בקול.</b> מקליטה את המשפט הראשון האמיתי שלה, ובוחרת מה מצלמת מחר.</p>
+    </div>
+  </section>
+
+<footer>
+    שעתיים בדיוק: 65 מנטלי, 5 הפסקה, 50 מעשי. שישה תרגילים, 56 דקות עבודה בידיים.<br>
+    החומר המנטלי מתוך המתכון לעסק שופע. תבנית התסריט מתוך המסמך עם גיא.
+  </footer>
+
+</div>
