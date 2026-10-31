@@ -255,6 +255,15 @@ blockquote::before{content:"";display:block;width:2.2rem;height:2rem;margin:-2.7
 @media(min-width:48rem){.gallery{grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}}
 @media(min-width:68rem){.gallery{grid-template-columns:repeat(5,minmax(0,1fr))}}
 .gItem{margin:0}
+.gallery.nat{display:block;column-count:2;column-gap:.9rem;max-width:62rem;margin:1.6rem auto 0}
+@media(min-width:48rem){.gallery.nat{column-count:3;column-gap:1.25rem}}
+.gallery.nat .gItem{break-inside:avoid;margin:0 0 .9rem}
+@media(min-width:48rem){.gallery.nat .gItem{margin-bottom:1.25rem}}
+.gallery.nat .recBtn{aspect-ratio:auto;padding:.45rem}
+.gallery.nat .recBtn::after{display:none}
+.gallery.nat .recBtn img{height:auto;object-fit:contain}
+.proofHead{max-width:36rem;margin:0 auto}
+.proofHead h2{margin:0 0 .4rem}
 .gallery .gItem:last-child .recBtn img{object-fit:contain;object-position:center}
 .gallery .recBtn{position:relative;aspect-ratio:3/4.4;overflow:hidden;padding:.45rem}
 .gallery .recBtn img{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:14px;transition:transform .6s var(--spring)}
@@ -574,6 +583,13 @@ footer .orn{margin:0 auto .8rem;width:10rem;opacity:.9}
         <figure class="gItem rv d1"><button class="recBtn" type="button" data-i="3" aria-label="פתיחת המלצה 4 מתוך 5"><span class="zoom" aria-hidden="true">+</span><img src="img/i18.jpg" alt="המלצה" loading="lazy"></button></figure>
         <figure class="gItem rv d2"><button class="recBtn" type="button" data-i="4" aria-label="פתיחת המלצה 5 מתוך 5"><span class="zoom" aria-hidden="true">+</span><img src="img/i19.jpg" alt="המלצה" loading="lazy"></button></figure>
     </div>
+    <div class="proofHead rv" style="text-align:center;margin-top:2.6rem"><h2>במילים שלהן</h2></div>
+    <div class="gallery nat" id="galleryA">
+        <figure class="gItem rv d1"><button class="recBtn" type="button" aria-label="פתיחת המלצה"><span class="zoom" aria-hidden="true">+</span><img src="img/r01.jpg" alt="המלצה" loading="lazy"></button></figure>
+        <figure class="gItem rv d2"><button class="recBtn" type="button" aria-label="פתיחת המלצה"><span class="zoom" aria-hidden="true">+</span><img src="img/r02.jpg" alt="המלצה" loading="lazy"></button></figure>
+        <figure class="gItem rv d3"><button class="recBtn" type="button" aria-label="פתיחת המלצה"><span class="zoom" aria-hidden="true">+</span><img src="img/r03.jpg" alt="המלצה" loading="lazy"></button></figure>
+        <figure class="gItem rv d1"><button class="recBtn" type="button" aria-label="פתיחת המלצה"><span class="zoom" aria-hidden="true">+</span><img src="img/r04.jpg" alt="המלצה" loading="lazy"></button></figure>
+    </div>
   </div>
 </section>
 
@@ -697,6 +713,19 @@ footer .orn{margin:0 auto .8rem;width:10rem;opacity:.9}
         <div class="rv d2"><div class="part"><span class="lbl">חלק שלישי</span><h3>יצירת המהלך</h3><p>המהלך שעובד בשבילך גם כשאת לא מולו.</p></div></div>
       </div>
       <div class="ctaBlock rv d2"><a class="cta" href="#register">אילה אני בפנים ←</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== קיר המלצות שני (לפני ההצעה) ===== -->
+<section class="band b-deep" style="padding-top:2.6rem;padding-bottom:2.6rem" aria-label="עוד המלצות">
+  <div class="wrap">
+    <div class="proofHead rv" style="text-align:center"><h2>לפני שאת מחליטה</h2><p style="margin:0">תקראי מה הן כתבו לי</p></div>
+    <div class="gallery nat" id="galleryB">
+        <figure class="gItem rv d1"><button class="recBtn" type="button" aria-label="פתיחת המלצה"><span class="zoom" aria-hidden="true">+</span><img src="img/r05.jpg" alt="המלצה" loading="lazy"></button></figure>
+        <figure class="gItem rv d2"><button class="recBtn" type="button" aria-label="פתיחת המלצה"><span class="zoom" aria-hidden="true">+</span><img src="img/r06.jpg" alt="המלצה" loading="lazy"></button></figure>
+        <figure class="gItem rv d3"><button class="recBtn" type="button" aria-label="פתיחת המלצה"><span class="zoom" aria-hidden="true">+</span><img src="img/r07.jpg" alt="המלצה" loading="lazy"></button></figure>
+        <figure class="gItem rv d1"><button class="recBtn" type="button" aria-label="פתיחת המלצה"><span class="zoom" aria-hidden="true">+</span><img src="img/r08.jpg" alt="המלצה" loading="lazy"></button></figure>
     </div>
   </div>
 </section>
@@ -1034,7 +1063,7 @@ const WORKSHOP_DATE = WORKSHOP.iso;
   /* ---------- testimonials gallery + lightbox ---------- */
   var lb = document.getElementById('lb'), lbImg = lb.querySelector('img'), lbClose = lb.querySelector('.lbClose'),
       lbPrev = lb.querySelector('.lbPrev'), lbNext = lb.querySelector('.lbNext'), lbCount = lb.querySelector('.lbCount'),
-      items = $$('#gallery .recBtn'), cur = 0, lastFocus = null;
+      items = $$('.gallery .recBtn'), cur = 0, lastFocus = null;
   function show(i){
     cur = (i + items.length) % items.length;
     lbImg.src = items[cur].querySelector('img').src;
@@ -1064,7 +1093,7 @@ const WORKSHOP_DATE = WORKSHOP.iso;
   var sx = null;
   lb.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; }, {passive:true});
   lb.addEventListener('touchend', function(e){ if(sx===null) return; var dx = e.changedTouches[0].clientX - sx; sx = null; if(Math.abs(dx) > 40) show(cur + (dx > 0 ? 1 : -1)); }, {passive:true});
-  items.forEach(function(b, i){ b.addEventListener('click', function(){ openLb(i); }); });
+  items.forEach(function(b, i){ b.setAttribute('aria-label','פתיחת המלצה '+(i+1)+' מתוך '+items.length); b.addEventListener('click', function(){ openLb(i); }); });
 
   /* ---------- forms ---------- */
   $$('form.signup').forEach(function(f){
